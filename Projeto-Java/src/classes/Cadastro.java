@@ -17,39 +17,39 @@ public class Cadastro {
 	public Cadastro(String nome, String cpf, String endereco, 
 			String telefone, String email, String receita) 
 	{	
-		System.out.println("\t\tDados do Paciente");
+		System.out.println("\t\t ::: Dados do Paciente ::: ");
 		
 		System.out.print("Nome: ");
-		this.setNome(input.next());
+		this.setNome(input.nextLine());
 		System.out.print("CPF: ");
-		this.setCpf(input.next());
+		this.setCpf(input.nextLine());
 		System.out.print("Endereço: ");
-		this.setEndereco(input.next());
+		this.setEndereco(input.nextLine());
 		System.out.print("Telefone: ");
-		this.setTelefone(input.next());
+		this.setTelefone(input.nextLine());
 		System.out.print("Email: ");
-		this.setEmail(input.next());
+		this.setEmail(input.nextLine());
 		System.out.print("Código da receita: ");
-		this.setReceita(input.next());
+		this.setReceita(input.nextLine());
 	}
 	
 	public Cadastro(String nome, String cnpj, String endereco, 
 			String telefone, String email) 
 	{
-		System.out.println("\t\tDados da Empresa");
+		System.out.println("\t\t ::: Dados da Empresa ::: ");
 
 		System.out.print("Nome: ");
-		this.setNome(input.next());
+		this.setNome(input.nextLine());
 		System.out.print("CNPJ: ");
-		this.setCnpj(input.next());
+		this.setCnpj(input.nextLine());
 		System.out.print("Endereço: ");
-		this.setEndereco(input.next());
+		this.setEndereco(input.nextLine());
 		System.out.print("Telefone: ");
-		this.setTelefone(input.next());
+		this.setTelefone(input.nextLine());
 		System.out.print("Email: ");
-		this.setEmail(input.next());
+		this.setEmail(input.nextLine());
 		System.out.print("Código da receita: ");
-		this.setReceita(input.next());
+		this.setReceita(input.nextLine());
 	}
 
 	public String getNome() {
@@ -110,14 +110,16 @@ public class Cadastro {
 	
 	public void imprimirInfoCPF()
 	{
-		System.out.println("\t\t**PESSOA FÍSICA**");
-		System.out.println("\nNome: "+getNome()+"\n CPF: "+getCpf()+"\n Endereço: "+getEndereco()+"\n Telefone: "+getTelefone()+"\n Email: "+getEmail());
+		System.out.println("\t\t\n ::: PESSOA FÍSICA :::");
+		System.out.println("\nNome: "+getNome()+"\nCPF: "+getCpf()+"\nEndereço: "+getEndereco()
+		+"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
 	}
 	
 	public void imprimirInfoCNPJ()
 	{
-		System.out.println("\t\t**PESSOA JURÍDICA**");
-		System.out.println("\nNome: "+getNome()+"\n CNPJ: "+getCnpj()+"\n Endereço: "+getEndereco()+"\n Telefone: "+getTelefone()+"\n Email: "+getEmail());
+		System.out.println("\t\t\n ::: PESSOA JURÍDICA ::: ");
+		System.out.println("\nNome: "+getNome()+"\nCNPJ: "+getCnpj()+"\nEndereço: "
+		+getEndereco()+"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
 	}
 }
 	

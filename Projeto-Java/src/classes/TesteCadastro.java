@@ -1,31 +1,34 @@
 package classes;
 
+import java.util.Scanner;
+
 public class TesteCadastro {
 
 	public static void main(String[] args) 
 	{
-		int qual;
-		Cadastro cadastro = new Cadastro (null, null, null, null, null, null);
+		int opcao;
 		System.out.println("Digite se você é Pessoa Física ou Pessoa Jurídica: ");
+		
+		Scanner input = new Scanner(System.in);
+
+		do {
+			System.out.println("Opção 1 - Pessoa Física.");
+			System.out.println("Opção 2 - Pessoa Jurídica.");
+			opcao = input.nextInt();
 			
-		//switch(qual);
-		//case 1;
-		
-		/*for(int x = 0; x < quant; x++) {
-			c1 = new Cadastro(null, null, null, null, null);
-			c1.getClass();
-			quant++;
-		}*/
-		
-/*
-		for(Cadastro varredura:c1) 
-		{	
-			varredura.c1;
-			quant++;
-		}
-		quant--;
-*/
-		
+			switch(opcao) {
+			case 1:
+				Cadastro cadastro = new Cadastro (null, null, null, null, null, null);
+				cadastro.imprimirInfoCPF();
+				break;
+			case 2:
+//				cadastro.imprimirInfoCNPJ();
+				break;
+				default:
+				System.out.println(" *** Opção Inválida ***");
+			}
+			
+		} while(opcao < 1 && opcao > 2);
 	}
 }
 
