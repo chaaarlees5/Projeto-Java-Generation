@@ -9,7 +9,24 @@ public class PessoaFisica extends Cadastro {
 	       super(nome, endereco, telefone, email, receita);
 	       this.cpf = cpf;
 	    }
-
+	   
+	   	public void setInformacoes() {
+	   		System.out.println("\n\t\t ::: Dados do Paciente ::: ");
+			
+			System.out.print("Nome: ");
+			setNome(input.nextLine());
+			System.out.print("CPF: ");
+			setCpf(input.nextLine());
+			System.out.print("Endereço: ");
+			setEndereco(input.nextLine());
+			System.out.print("Telefone: ");
+			setTelefone(input.nextLine());
+			System.out.print("Email: ");
+			setEmail(input.nextLine());
+			System.out.print("Código da receita: ");
+			setReceita(input.nextLine());
+	   	}
+	   
 	    public String getCpf() {
 	        return cpf;
 	    }

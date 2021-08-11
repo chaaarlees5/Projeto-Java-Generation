@@ -6,7 +6,9 @@ public class TesteCadastro {
 
 	public static void main(String[] args) {
 	int opcao;
-	
+	PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
+	PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
+
 	Scanner input = new Scanner(System.in);
 
 	do {
@@ -17,11 +19,11 @@ public class TesteCadastro {
 		
 		switch(opcao) {
 		case 1:
-			PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
+			cpf.setInformacoes();
 			cpf.imprimirInfo();
 			break;
 		case 2:
-			PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
+			cnpj.setInformacoes();
 			cnpj.imprimirInfo();
 			break;
 			default:
@@ -66,27 +68,3 @@ public class TesteCadastro {
 	} while (opcao < 0 || opcao > 5);
   }
 }
-/*
-	do {
-		System.out.println("Opção 1 - Pessoa Física.");
-		System.out.println("Opção 2 - Pessoa Jurídica.");
-		opcao = input.nextInt();
-		
-		switch(opcao) {
-		case 1:
-			Cadastro cadastro = new Cadastro (null, null, null, null, null, null);
-			cadastro.imprimirInfoCPF();
-			break;
-		case 2:
-//			cadastro.imprimirInfoCNPJ();
-			break;
-			default:
-			System.out.println(" * Opção Inválida *");
-		}
-		
-	} while(opcao < 1 && opcao > 2);
-}
-}
-*/
-
-

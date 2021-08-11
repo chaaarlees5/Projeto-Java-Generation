@@ -10,7 +10,24 @@ public class PessoaJuridica extends Cadastro {
         super(nome, endereco, telefone, email);
         this.cnpj = cnpj;
     }
-
+    
+    public void setInformacoes() {
+   		System.out.println("\n\t\t ::: Dados do Paciente ::: ");
+		
+		System.out.print("Nome: ");
+		setNome(input.nextLine());
+		System.out.print("CNPJ: ");
+		setCnpj(input.nextLine());
+		System.out.print("Endereço: ");
+		setEndereco(input.nextLine());
+		System.out.print("Telefone: ");
+		setTelefone(input.nextLine());
+		System.out.print("Email: ");
+		setEmail(input.nextLine());
+		System.out.print("Código da receita: ");
+		setReceita(input.nextLine());
+   	}
+    
     public String getCnpj() {
         return cnpj;
     }
