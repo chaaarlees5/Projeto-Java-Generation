@@ -7,6 +7,12 @@ import java.util.Scanner;
 public class Produtos {
 	
 	public static void main(String[] args) {
+
+		PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
+
+		PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
+		
+		Cadastro cadastro = new Cadastro(null, null, null, null, null);
 		
 		List <String> produtos = new ArrayList <String>();
 		
@@ -16,127 +22,115 @@ public class Produtos {
 		produtos.add("protese");
 		produtos.add("liner");
 	
-		/*System.out.println("\t\tEQUIPAMENTOS DISPONÍVEIS PARA EMPRÉSTIMO: ");
-		for(String listaProdutos: produtos)
-		{
-			System.out.println(listaProdutos);
-		}*/
-		
-		int contc=10, contm=10, conta=10, contp=10, contl=10, op, opcao;
+		int contc=10, contm=10, conta=10, contp=10, contl=10, op, opcao=0, quant=0;
 		Scanner input = new Scanner (System.in);
+		/*
+		System.out.println("\t\t*** ONG AmparAção ***"
+			+ "\n*** EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS ***");
 		
+		System.out.print("(1) Doação \n(2) Empréstimo \nDigite a opção desejada: ");
+		*/		
 		do {
-			System.out.println("\t\t*** ONG AMPARAÇÃO ***");
-			System.out.println("*** EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS ***");
-			System.out.println("Opção 1 - Pessoa Física.");
-			System.out.println("Opção 2 - Pessoa Jurídica.");
-			System.out.print("Digite se você é Pessoa Física ou Pessoa Jurídica: ");
-			opcao = input.nextInt();
+			opcao = cadastro.fisicaJuridica();
 			
 			switch(opcao) {
 			case 1:
-				PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
-				cpf.imprimirInfo();
+				cpf.setInformacoes();
 				break;
 			case 2:
-				PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
-				cnpj.imprimirInfo();
+				cnpj.setInformacoes();
 				break;
 				default:
 				System.out.println(" * Opção Inválida *\n");
 			}
-			
 		} while (opcao < 1 || opcao > 2);
 	
-		do
-		{
-			System.out.println("\n\t\tMenu do estoque: ");
-			System.out.println("---------------------------------------");
-			System.out.println("\n(1) Adicionar produtos ao estoque"
-					+ "\n(2) Remover produtos do estoque"
-					+ "\n(3) Mostrar todos os produtos do estoque"
-					+ "\n(0) Encerrar");
-			System.out.println("---------------------------------------");
-			System.out.println("\n\t\tDigite uma opção: ");
+		do {
+			System.out.print(cadastro.menuEstoque());
 			op = input.nextInt();
 		
-			switch (op)
-			{
+			switch (op) {
 			case 1: 
 				input.nextLine();
-				System.out.println("\nDigite o produto para adicionar ao estoque: ");
+				System.out.print("\nDigite o produto para adicionar ao estoque: ");
 				String verifica = input.nextLine();
-			
-				if (produtos.contains(verifica.toLowerCase()))
-				{
-					if (verifica == "cadeira de rodas")
-					{
-						contc++;
+				verifica = verifica.toLowerCase();
+				System.out.print("\nDigite a quantidade a ser adicionada: ");
+				quant = input.nextInt();
+				
+				if (produtos.contains(verifica)) {
+					if (verifica.equals("cadeira de rodas")) {
+						contc += quant;
 					}
-					else if (verifica == "muleta")
-					{
-						contm++;
+					else if (verifica.equals("muleta")) {
+						contm += quant;
 					}
-					else if (verifica == "andador")
-					{
-						conta++;
+					else if (verifica.equals("andador")) {
+						conta += quant;
 					}
-					else if (verifica == "protese")
-					{
-						contp++;
+					else if (verifica.equals("protese")) {
+						contp += quant;
 					}
-					else if (verifica == "liner")
-					{
-						contl++;
+					else if (verifica.equals("liner")) {
+						contl += quant;
 					}
+				} 
+				else {
+					System.out.println("\nProduto não reconhecido.");
 				}
+				
 				System.out.println("\t"+contc+"\t"+contm+"\t"+conta+"\t"+contp+"\t"+contl);
 				break;
 				
 			case 2:
 				input.nextLine();
-				System.out.println("\nDigite o produto para remover ao estoque: ");
-				String remover =input.nextLine();
+				System.out.print("\nDigite o produto para remover ao estoque: ");
+				String remover = input.nextLine();
+				remover = remover.toLowerCase();
+				System.out.print("\nDigite a quantidade a ser removida: ");
+				quant = input.nextInt();
+
 				
-				if (produtos.contains(remover.toLowerCase()))
-				{
-					if (remover == "cadeira de rodas")
-					{
-						contc--;
+				if (produtos.contains(remover)) {
+					if (remover.equals("cadeira de rodas")) {
+						contc -= quant;
 					}
-					else if (remover == "muleta")
-					{
-						contm--;
+					else if (remover.equals("muleta")) {
+						contm -= quant;
 					}
-					else if (remover == "andador")
-					{
-						conta--;
+					else if (remover.equals("andador")) {
+						conta -= quant;
 					}
-					else if (remover == "protese")
-					{
-						contp--;
+					else if (remover.equals("protese")) {
+						contp -= quant;
 					}
-					else if (remover == "liner")
-					{
-						contl--;
+					else if (remover.equals("liner")) {
+						contl -= quant;
+					}
+					else {
+						System.out.println("Produto digitado não existe!!!");
 					}
 				}
-				System.out.println("\t"+contc+"\t"+contm+"\t"+conta+"\t"+contp+"\t"+contl);
 				break;
 				
 			case 3:
-				System.out.println("\t\tEQUIPAMENTOS DISPONÍVEIS PARA EMPRÉSTIMO: ");
-				for(String listaProdutos: produtos)
-				{
-					System.out.println(listaProdutos);
+				System.out.println("\t\t::: Equipamentos disponíveis para empréstimo :::\n");
+				for(String listaProdutos:produtos) {
+					
+					System.out.println(listaProdutos + " - " + contm);
 				}
 				break;
-				default:
+			default:
 				System.out.println("\nVocê finalizou o programa, volte sempre! :D");
 			}
 	
 		} while (op != 0);
-	
+		
+		if(opcao == 1) {
+			cpf.imprimirInfo();
+		} else {
+			cnpj.imprimirInfo();
+		}
 	}
 
 }
