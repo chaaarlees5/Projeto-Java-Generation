@@ -22,13 +22,14 @@ public class TesteCadastro {
 				cadastro.imprimirInfoCPF();
 				break;
 			case 2:
-//				cadastro.imprimirInfoCNPJ();
+				Cadastro cadastroCNPJ = new Cadastro(null, null, null, null, null, null);
+				cadastroCNPJ.imprimirInfoCNPJ();
 				break;
 				default:
 				System.out.println(" *** Opção Inválida ***");
 			}
 			
-		} while(opcao < 1 && opcao > 2);
+		} while(opcao < 1 || opcao > 2);
 	}
 }
 
