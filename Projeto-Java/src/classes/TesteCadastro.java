@@ -31,13 +31,13 @@ public class TesteCadastro {
 	} while (opcao < 1 || opcao > 2);
 	
 	do {
-		System.out.println("\n\nOpção 1 - Muleta.");
-		System.out.println("Opção 2 - Cadeira de Rodas.");
-		System.out.println("Opção 3 - Liner.");
-		System.out.println("Opção 4 - Prótese de Perna.");
-		System.out.println("Opção 5 - ???????????.");
-		System.out.println("Digite 0 para cancelar.");
-		System.out.print("Digite a opção que deseja solicitar: ");
+		System.out.println("\nOpção 1 - Cadeira de rodas");
+		System.out.println("\nOpção 2 - Muleta");
+		System.out.println("\nOpção 3 - Andador");
+		System.out.println("\nOpção 4 - Prótese");
+		System.out.println("\nOpção 5 - Liner");
+		System.out.println("\nDigite 0 para cancelar.");
+		System.out.print("\nDigite a opção que deseja solicitar: ");
 		opcao = input.nextInt();
 		
 		switch(opcao) {
