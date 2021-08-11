@@ -16,36 +16,13 @@ public class Cadastro {
 			String telefone, String email, String receita) {	
 		
 		super();
-		System.out.println("\n\t\t ::: Dados do Paciente ::: ");
 		
-		System.out.print("Nome: ");
-		this.setNome(input.nextLine());
-		System.out.print("Endereço: ");
-		this.setEndereco(input.nextLine());
-		System.out.print("Telefone: ");
-		this.setTelefone(input.nextLine());
-		System.out.print("Email: ");
-		this.setEmail(input.nextLine());
-		System.out.print("Código da receita: ");
-		this.setReceita(input.nextLine());
 	}
 	
 	public Cadastro(String nome, String endereco, 
 			String telefone, String email) {
 		
-		System.out.println("\n\t\t ::: Dados da Empresa ::: ");
-
-		System.out.print("Nome: ");
-		this.setNome(input.nextLine());
-		System.out.print("Endereço: ");
-		this.setEndereco(input.nextLine());
-		System.out.print("Telefone: ");
-		this.setTelefone(input.nextLine());
-		System.out.print("Email: ");
-		this.setEmail(input.nextLine());
-		System.out.print("Código da receita: ");
-		this.setReceita(input.nextLine());
-	}
+			}
 
 	public String getNome() {
 		return nome;
@@ -87,15 +64,5 @@ public class Cadastro {
 		this.receita = receita;
 	}
 	
-	public void imprimirInfoCPF() {
-		System.out.println("\t\t\n ::: PESSOA FÍSICA :::");
-		System.out.println("\nNome: "+getNome()+"\nEndereço: "+getEndereco()
-		+"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
-	}
-	
-	public void imprimirInfoCNPJ() {
-		System.out.println("\t\t\n ::: PESSOA JURÍDICA ::: ");
-		System.out.println("\nNome: "+getNome()+"\nEndereço: "
-		+getEndereco()+"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
-	}
+
 }
