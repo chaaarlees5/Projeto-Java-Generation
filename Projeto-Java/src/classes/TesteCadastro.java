@@ -20,11 +20,11 @@ public class TesteCadastro {
 		switch(opcao) {
 		case 1:
 			cpf.setInformacoes();
-			cpf.imprimirInfo();
+			cpf.validaCPF();
 			break;
 		case 2:
 			cnpj.setInformacoes();
-			cnpj.imprimirInfo();
+			cnpj.validaCNPJ();
 			break;
 			default:
 			System.out.println(" * Opção Inválida *\n");
@@ -42,7 +42,7 @@ public class TesteCadastro {
 		System.out.print("\nDigite a opção que deseja solicitar: ");
 		opcao = input.nextInt();
 		
-		switch(opcao) {
+		switch(	opcao) {
 		case 0:
 			
 			break;
