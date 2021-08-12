@@ -22,7 +22,7 @@ public class PessoaJuridica extends Cadastro {
 		} while(validaCNPJ() == false);
 		System.out.print("Endereço: ");
 		setEndereco(input.nextLine());
-		System.out.print("Telefone: ");
+		System.out.print("Telefone: +55");
 		setTelefone(input.nextLine());
 		System.out.print("Email: ");
 		setEmail(input.nextLine());
@@ -46,10 +46,16 @@ public class PessoaJuridica extends Cadastro {
     	return this.getCnpj().length()==14;
     }
 
-    public void imprimirInfo() {
-        System.out.println("\t\t\n ::: Dados da Empresa :::");
+    public void imprimirInfoEmp() {
+    	System.out.println("\t\t\n ::: Contrato de Empréstimo de Equipamentos :::");
+        System.out.println("\nNúmero do Contrato: " + getRandom());
         System.out.println("\nNome: "+getNome()+"\nCNPJ: "+getCnpj()+"\nEndereço: "+getEndereco()
         +"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
-
+    }
+    
+    public void imprimirInfoDoacao() {
+        System.out.println("\t\t\n ::: AGRADECIMENTOS :::");
+        System.out.println("\nMuito obrigado " + getNome() + "!!!\nAgradecemos a sua doação!!");
+    
     }
 }

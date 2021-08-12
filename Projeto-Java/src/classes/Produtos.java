@@ -7,7 +7,9 @@ import java.util.Scanner;
 public class Produtos {
 	
 	public static void main(String[] args) {
-
+		int contC=10, contM=10, contA=10, contP=10, contL=10, op, opcao=0, quant=0;
+		String verifica;
+		
 		PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
 		PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
 		Cadastro cadastro = new Cadastro(null, null, null, null, null);
@@ -21,23 +23,19 @@ public class Produtos {
 		produtos.add("protese");
 		produtos.add("liner");
 	
-		int contC=10, contM=10, contA=10, contP=10, contL=10, op, opcao=0, quant=0;
-		String verifica;
-		Scanner input = new Scanner (System.in);
-		
-		cadastro.doaEmpresta();
+		int doacao = cadastro.doaEmpresta();
 		
 		do {
 			opcao = cadastro.fisicaJuridica();
 			
 			switch(opcao) {
 			case 1:
-				cpf.setInformacoes();
+				cpf.setInformacoes(doacao);
 				break;
 			case 2:
 				cnpj.setInformacoes();
 				break;
-				default:
+			default:
 				System.out.println(" * Opção Inválida *\n");
 			}
 		} while (opcao < 1 || opcao > 2);
@@ -110,6 +108,8 @@ public class Produtos {
 						System.out.println("- " +listaProdutos + ": " + contP + "un");
 					} else if(listaProdutos=="liner") {
 						System.out.println("- " +listaProdutos + ": " + contL + "un");
+					} else if(listaProdutos=="cadeira de rodas") {
+						System.out.println("- " +listaProdutos + ": " + contC + "un");
 					}
 					
 				}
@@ -120,10 +120,14 @@ public class Produtos {
 	
 		} while (op != 0);
 		
-		if(opcao == 1) {
-			cpf.imprimirInfo();
+		if(opcao == 1 && doacao == 1) {
+			cpf.imprimirInfoDoacao();
+		} else if(opcao == 1 && doacao == 2){
+			cpf.imprimirInfoEmp();
+		} else if(opcao == 2 && doacao == 1){
+			cnpj.imprimirInfoDoacao();
 		} else {
-			cnpj.imprimirInfo();
+			cnpj.imprimirInfoEmp();
 		}
 	}
 

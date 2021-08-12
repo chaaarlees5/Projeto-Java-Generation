@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Cadastro {
 	
@@ -11,10 +12,11 @@ public class Cadastro {
 	private String receita;
 	
 	int opcao;
-	int doaEmpresta;
+	public int doaEmpresta;
 	
 	Scanner input = new Scanner(System.in);
-	
+	Random sorteia = new Random();
+
 	public Cadastro(String nome, String endereco, 
 			String telefone, String email, String receita) {	
 		
@@ -67,12 +69,11 @@ public class Cadastro {
 		this.receita = receita;
 	}
 	
-	public void doaEmpresta() {
+	public int doaEmpresta() {
    		System.out.println("\t\t::: ONG AmparAção :::\n"
    				+ "\n::: EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS :::\n");
    		System.out.print("(1) Doação \n(2) Empréstimo \nDigite a opção desejada: ");
-		doaEmpresta = input.nextInt();
-		input.nextLine();
+		return input.nextInt();
    	}
 	
 	public int fisicaJuridica() {
@@ -81,5 +82,11 @@ public class Cadastro {
 		return opcao;
 	}
 	
+	public int getRandom() {
+    	int min = 100000000;
+    	int max = 999999999;
+    	int numero = sorteia.nextInt((max-min) + 1) + min;
+    	return numero;
+    }
 	
 }

@@ -4,9 +4,7 @@ import java.util.Random;
 
 public class PessoaFisica extends Cadastro {
 		private String cpf;
-		
-		int doaEmpresta;
-		
+			
 		Random sorteia = new Random();
 
 	   	public PessoaFisica(String nome, String endereco, 
@@ -16,8 +14,8 @@ public class PessoaFisica extends Cadastro {
 	       this.cpf = cpf;
 	    }
 	   	
-	   	public void setInformacoes() {
-			if(doaEmpresta == 2) {
+	   	public void setInformacoes(int doacao) {
+			if(doacao == 2) {
 				System.out.println("\n\t\t ::: Dados do Paciente ::: ");
 			} else {
 				System.out.println("\n\t\t ::: Dados do Doador ::: ");
@@ -30,11 +28,11 @@ public class PessoaFisica extends Cadastro {
 			} while(validaCPF() == false);
 			System.out.print("Endereço: ");
 			setEndereco(input.nextLine());
-			System.out.print("Telefone: ");
+			System.out.print("Telefone: +55");
 			setTelefone(input.nextLine());
 			System.out.print("Email: ");
 			setEmail(input.nextLine());
-			if(doaEmpresta == 2) {
+			if(doacao == 2) {
 				System.out.print("Código da receita: ");
 				setReceita(input.nextLine());
 			}
@@ -59,17 +57,16 @@ public class PessoaFisica extends Cadastro {
 	    	return (this.getCpf().length() == 11);
 	    }
 	    
-	    public int getRandom() {
-	    	int min = 100000000;
-	    	int max = 999999999;
-	    	int numero = sorteia.nextInt((max-min) + 1) + min;
-	    	return numero;
-	    }
-	    
-	    public void imprimirInfo() {
+	    public void imprimirInfoEmp() {
 	        System.out.println("\t\t\n ::: Contrato de Empréstimo de Equipamentos :::");
 	        System.out.println("\nNúmero do Contrato: " + getRandom());
 	        System.out.println("\nNome: "+getNome()+"\nCPF: "+getCpf()+"\nEndereço: "+getEndereco()
 	        +"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
+	    }
+	    
+	    public void imprimirInfoDoacao() {
+	        System.out.println("\t\t\n ::: Carteirinha de Doador :::");
+	        System.out.println("\nID Doador: " + getRandom());
+	        System.out.println("\nNome: "+getNome()+"\tTelefone: "+getTelefone());
 	    }
 	}
