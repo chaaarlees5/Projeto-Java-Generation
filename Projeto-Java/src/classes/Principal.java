@@ -2,17 +2,17 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class Produtos {
+public class Principal {
 	
 	public static void main(String[] args) {
-
+		int contC=10, contM=10, contA=10, contP=10, contL=10, op, opPessoa=0, quant=0;
+		String verifica;
+		
 		PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
 		PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
 		Cadastro cadastro = new Cadastro(null, null, null, null, null);
-		Estoque estoque = new Estoque(0, null, false, 0);
-		
+		Estoque estoque = new Estoque();
 		List <String> produtos = new ArrayList <String>();
 		
 		produtos.add("cadeira de rodas");
@@ -21,26 +21,22 @@ public class Produtos {
 		produtos.add("protese");
 		produtos.add("liner");
 	
-		int contc=10, contm=10, conta=10, contp=10, contl=10, op, opcao=0, quant=0;
-		String verifica;
-		Scanner input = new Scanner (System.in);
-		
-		cadastro.doaEmpresta();
+		int doacao = cadastro.doaEmpresta();
 		
 		do {
-			opcao = cadastro.fisicaJuridica();
+			opPessoa = cadastro.fisicaJuridica();
 			
-			switch(opcao) {
+			switch(opPessoa) {
 			case 1:
-				cpf.setInformacoes();
+				cpf.setInformacoes(doacao);
 				break;
 			case 2:
 				cnpj.setInformacoes();
 				break;
-				default:
+			default:
 				System.out.println(" * Opção Inválida *\n");
 			}
-		} while (opcao < 1 || opcao > 2);
+		} while (opPessoa < 1 || opPessoa > 2);
 	
 		do {
 			op = estoque.menuEstoque();
@@ -51,26 +47,25 @@ public class Produtos {
 				
 				if (produtos.contains(verifica)) {
 					if (verifica.equals("cadeira de rodas")) {
-						contc += quant;
+						contC += quant;
 					}
 					else if (verifica.equals("muleta")) {
-						contm += quant;
+						contM += quant;
 					}
 					else if (verifica.equals("andador")) {
-						conta += quant;
+						contA += quant;
 					}
 					else if (verifica.equals("protese")) {
-						contp += quant;
+						contP += quant;
 					}
 					else if (verifica.equals("liner")) {
-						contl += quant;
+						contL += quant;
 					}
 				} 
 				else {
 					System.out.println("\nProduto não reconhecido.");
 				}
-				
-				System.out.println("\t"+contc+"\t"+contm+"\t"+conta+"\t"+contp+"\t"+contl);
+				System.out.println("\t"+contC+"\t"+contM+"\t"+contA+"\t"+contP+"\t"+contL);
 				break;
 				
 			case 2:
@@ -79,19 +74,19 @@ public class Produtos {
 				
 				if (produtos.contains(verifica)) {
 					if (verifica.equals("cadeira de rodas")) {
-						contc -= quant;
+						contC -= quant;
 					}
 					else if (verifica.equals("muleta")) {
-						contm -= quant;
+						contM -= quant;
 					}
 					else if (verifica.equals("andador")) {
-						conta -= quant;
+						contA -= quant;
 					}
 					else if (verifica.equals("protese")) {
-						contp -= quant;
+						contP -= quant;
 					}
 					else if (verifica.equals("liner")) {
-						contl -= quant;
+						contL -= quant;
 					}
 					else {
 						System.out.println("Produto digitado não existe!!!");
@@ -102,10 +97,16 @@ public class Produtos {
 			case 3:
 				System.out.println("\t\t\n::: Equipamentos disponíveis para empréstimo :::\n");
 				for(String listaProdutos:produtos) {
-					if(listaProdutos == "muleta") {
-						System.out.println(listaProdutos + " - " + contm);
-					} else if(listaProdutos == "liner") {
-						System.out.println(listaProdutos + " - " + contl);
+					if(listaProdutos=="muleta") {
+						System.out.println("- " + listaProdutos + ": " + contM + "un");
+					} else if(listaProdutos=="andador") {
+						System.out.println("- " +listaProdutos + ": " + contA + "un");
+					} else if(listaProdutos=="protese") {
+						System.out.println("- " +listaProdutos + ": " + contP + "un");
+					} else if(listaProdutos=="liner") {
+						System.out.println("- " +listaProdutos + ": " + contL + "un");
+					} else if(listaProdutos=="cadeira de rodas") {
+						System.out.println("- " +listaProdutos + ": " + contC + "un");
 					}
 					
 				}
@@ -113,13 +114,16 @@ public class Produtos {
 			default:
 				System.out.println("\nVocê finalizou o programa, volte sempre! :D");
 			}
-	
 		} while (op != 0);
 		
-		if(opcao == 1) {
-			cpf.imprimirInfo();
+		if(opPessoa == 1 && doacao == 1) {
+			cpf.imprimirInfoDoacao();
+		} else if(opPessoa == 1 && doacao == 2){
+			cpf.imprimirInfoEmp();
+		} else if(opPessoa== 2 && doacao == 1){
+			cnpj.imprimirInfoDoacao();
 		} else {
-			cnpj.imprimirInfo();
+			cnpj.imprimirInfoEmp();
 		}
 	}
 
