@@ -10,8 +10,8 @@ public class TesteCadastro {
 	Scanner input = new Scanner(System.in);
 
 	do {
-		System.out.println("Opção 1 - Pessoa Física.");
-		System.out.println("Opção 2 - Pessoa Jurídica.");
+		System.out.println("Opção 1 - Pessoa Física");
+		System.out.println("Opção 2 - Pessoa Jurídica");
 		System.out.print("Digite se você é Pessoa Física ou Pessoa Jurídica: ");
 		opcao = input.nextInt();
 		
