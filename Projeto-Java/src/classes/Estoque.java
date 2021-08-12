@@ -6,7 +6,6 @@ public class Estoque {
 	private String codProduto;
 	private boolean emprestimo;
 	private int tipoDef;
-	private String indeterminado;
 	
 	public Estoque(int quant, String codigo, boolean emprestimo, int tipoDef) 
 	{
