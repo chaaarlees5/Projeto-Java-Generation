@@ -10,42 +10,22 @@ public class Cadastro {
 	private String email;
 	private String receita;
 	
+	int opcao;
+	int doaEmpresta;
+	
 	Scanner input = new Scanner(System.in);
 	
 	public Cadastro(String nome, String endereco, 
 			String telefone, String email, String receita) {	
 		
 		super();
-		System.out.println("\n\t\t ::: Dados do Paciente ::: ");
 		
-		System.out.print("Nome: ");
-		this.setNome(input.nextLine());
-		System.out.print("Endereço: ");
-		this.setEndereco(input.nextLine());
-		System.out.print("Telefone: ");
-		this.setTelefone(input.nextLine());
-		System.out.print("Email: ");
-		this.setEmail(input.nextLine());
-		System.out.print("Código da receita: ");
-		this.setReceita(input.nextLine());
 	}
 	
 	public Cadastro(String nome, String endereco, 
 			String telefone, String email) {
 		
-		System.out.println("\n\t\t ::: Dados da Empresa ::: ");
-
-		System.out.print("Nome: ");
-		this.setNome(input.nextLine());
-		System.out.print("Endereço: ");
-		this.setEndereco(input.nextLine());
-		System.out.print("Telefone: ");
-		this.setTelefone(input.nextLine());
-		System.out.print("Email: ");
-		this.setEmail(input.nextLine());
-		System.out.print("Código da receita: ");
-		this.setReceita(input.nextLine());
-	}
+			}
 
 	public String getNome() {
 		return nome;
@@ -87,15 +67,19 @@ public class Cadastro {
 		this.receita = receita;
 	}
 	
-	public void imprimirInfoCPF() {
-		System.out.println("\t\t\n ::: PESSOA FÍSICA :::");
-		System.out.println("\nNome: "+getNome()+"\nEndereço: "+getEndereco()
-		+"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
+	public void doaEmpresta() {
+   		System.out.println("\t\t** ONG AmparAção **"
+   				+ "\n** EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS **");
+   		System.out.print("(1) Doação \n(2) Empréstimo \nDigite a opção desejada: ");
+		doaEmpresta = input.nextInt();
+		input.nextLine();
+   	}
+	
+	public int fisicaJuridica() {
+		System.out.print("\n(1) Pessoa Física \n(2) Pessoa Jurídica. \nDigite uma das opções acima: ");
+		opcao = input.nextInt();
+		return opcao;
 	}
 	
-	public void imprimirInfoCNPJ() {
-		System.out.println("\t\t\n ::: PESSOA JURÍDICA ::: ");
-		System.out.println("\nNome: "+getNome()+"\nEndereço: "
-		+getEndereco()+"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
-	}
+	
 }
