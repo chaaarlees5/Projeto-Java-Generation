@@ -30,14 +30,17 @@ AmparAção tem por finalidade oferecer uma solução para pessoas que possuem d
       * Cadastro.java
       * Estoque.java
       * TesteCadastro.java
-  
+      * PessoaFísica.java
+      * PessoaJuridica.java
+      * Principal.java
+    
     
 
 ## 💻  Contribuidores: 
 
-| <a href="https://github.com/Bruno-Luna">`Bruno Luna`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Bruno.jpg" style="zoom:25%;" /></a> | <a href="https://github.com/gabsribeiro">`Gabriela Ribeiro`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Gabriela.jpg" style="zoom:25%;" /></a> | <a href="https://github.com/MrLucc">`Lucas Silva`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Lucas.jpg" style="zoom:25%;" /></a> |
+| <a href="https://github.com/Bruno-Luna">`Bruno Luna`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Bruno.jpg" style="zoom:20%;" /></a> | <a href="https://github.com/gabsribeiro">`Gabriela Ribeiro`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Gabriela.jpg" style="zoom:20%;" /></a> | <a href="https://github.com/MrLucc">`Lucas Silva`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Lucas.jpg" style="zoom:20%;" /></a> |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <a href="https://github.com/beatrizcastroe">`Beatriz Castro`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Bia.jpg" style="zoom:25%;" /></a> | <a href="https://github.com/chaaarlees5">`Charles Roberto`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Charles.jpg" style="zoom:25%;" /></a> | <a href="https://github.com/tainanluz">`Tainan Luz`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Tainan.jpg" style="zoom: 33%;" /></a> |
+| <a href="https://github.com/beatrizcastroe">`Beatriz Castro`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Bia.jpg" style="zoom:20%;" /></a> | <a href="https://github.com/chaaarlees5">`Charles Roberto`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Charles.jpg" style="zoom:20%;" /></a> | <a href="https://github.com/tainanluz">`Tainan Luz`<br><img src="https://github.com/chaaarlees5/Projeto-Java-Generation/blob/main/Projeto-Java/photos/Tainan.jpg" style="zoom: 28%;" /></a> |
 
 
 
