@@ -5,7 +5,8 @@ import java.util.Random;
 public class PessoaFisica extends Cadastro {
 		private String cpf;
 		Random sorteia = new Random();
-
+		
+//Constutor pessoa física
 	   	public PessoaFisica(String nome, String endereco, 
 	         String telefone, String email, String receita, String cpf) {
 
@@ -13,6 +14,7 @@ public class PessoaFisica extends Cadastro {
 	       this.cpf = cpf;
 	    }
 	   	
+//Método para inserir as informações da pessoa física
 	   	public void setInformacoes(int doacao) {
 			if(doacao == 2) {
 				System.out.println("\n\t\t ::: Dados do Paciente ::: ");
@@ -43,6 +45,7 @@ public class PessoaFisica extends Cadastro {
 			}
 	   	}
 	   
+	   	
 	    public String getCpf() {
 	        return cpf;
 	    }
@@ -51,12 +54,14 @@ public class PessoaFisica extends Cadastro {
 	        this.cpf = cpf;
 	    }
 	    
+//Método para validar se o CPF possui 11 números.
 	    public boolean validaCPF() {
 	    	if((this.getCpf().length()!=11))
 	    			System.err.println("Erro. Digite um CPF válido.");	    		
 	    	return (this.getCpf().length() == 11);
 	    }
 	    
+//Método final que printa na tela o contrato de empréstimo da pessoa física
 	    public void imprimirInfoEmp() {
 	        System.out.println("\t\t\n ::: Contrato de Empréstimo de Equipamentos :::");
 	        System.out.println("\nNúmero do Contrato: " + getRandom());
@@ -64,6 +69,7 @@ public class PessoaFisica extends Cadastro {
 	        +"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
 	    }
 	    
+//Método final que printa na tela a carteirinha do doador
 	    public void imprimirInfoDoacao() {
 	        System.out.println("\t\t\n ::: Carteirinha de Doador :::");
 	        System.out.println("\nID Doador: " + getRandom());

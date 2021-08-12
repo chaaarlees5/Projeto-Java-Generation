@@ -6,27 +6,31 @@ import java.util.List;
 public class Principal {
 	
 	public static void main(String[] args) {
-		int contC=10, contM=10, contA=10, contP=10, contL=10, op, opPessoa=0, quant=0;
+		int contC=20, contM=20, contA=20, contP=20, contL=20, opcaoEstoque, opcaoPessoa=0, quant=0;
 		String verifica;
 		
+		//Instanciando objetos
 		PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
 		PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
 		Cadastro cadastro = new Cadastro(null, null, null, null, null);
 		Estoque estoque = new Estoque();
 		List <String> produtos = new ArrayList <String>();
-		
+		//Definindo os 5 produtos da lista
 		produtos.add("cadeira de rodas");
 		produtos.add("muleta");
 		produtos.add("andador");
 		produtos.add("protese");
 		produtos.add("liner");
-	
+		
+//Chama metodo doaEmpresta da classe Cadastro e armazena em 'doacao'
 		int doacao = cadastro.doaEmpresta();
 		
 		do {
-			opPessoa = cadastro.fisicaJuridica();
+//Chama metodo fisicaJuridica da classe Cadastro e armazena em 'opcaoPessoa'
+			opcaoPessoa = cadastro.fisicaJuridica();
 			
-			switch(opPessoa) {
+//Verifica se é Pessoa Física ou Jurídica e armazena os dados.
+			switch(opcaoPessoa) {
 			case 1:
 				cpf.setInformacoes(doacao);
 				break;
@@ -34,13 +38,15 @@ public class Principal {
 				cnpj.setInformacoes();
 				break;
 			default:
-				System.out.println(" * Opção Inválida *\n");
+				System.err.print("* Opção Inválida *");
 			}
-		} while (opPessoa < 1 || opPessoa > 2);
+		} while (opcaoPessoa != 1 && opcaoPessoa != 2);
 	
+//Imprime menu do Estoque e pergunta ao usuário o que fazer.
 		do {
-			op = estoque.menuEstoque();
-			switch (op) {
+			opcaoEstoque = estoque.menuEstoque();
+			switch (opcaoEstoque) {
+//Caso digite 1, usuário escolhe qual o produto e quanto adicionar.
 			case 1: 
 				verifica = estoque.addProd();
 				quant = estoque.quantidade();
@@ -65,9 +71,8 @@ public class Principal {
 				else {
 					System.out.println("\nProduto não reconhecido.");
 				}
-				System.out.println("\t"+contC+"\t"+contM+"\t"+contA+"\t"+contP+"\t"+contL);
 				break;
-				
+//Caso digite 2, usuário escolhe qual o produto e quanto remover.	
 			case 2:
 				verifica = estoque.removeProd();
 				quant = estoque.quantidade();
@@ -93,34 +98,37 @@ public class Principal {
 					}
 				}
 				break;
-				
+//Caso digite 3, o sistema imprime os 5 produtos e as quantidades.		
 			case 3:
 				System.out.println("\t\t\n::: Equipamentos disponíveis para empréstimo :::\n");
+//for each para rodar a lista toda e imprimir os 5 produtos
 				for(String listaProdutos:produtos) {
 					if(listaProdutos=="muleta") {
-						System.out.println("- " + listaProdutos + ": " + contM + "un");
+						System.out.println("* Muleta: " + contM + "un *");
 					} else if(listaProdutos=="andador") {
-						System.out.println("- " +listaProdutos + ": " + contA + "un");
+						System.out.println("* Andador: " + contA + "un *");
 					} else if(listaProdutos=="protese") {
-						System.out.println("- " +listaProdutos + ": " + contP + "un");
+						System.out.println("* Protese de perna: " + contP + "un *");
 					} else if(listaProdutos=="liner") {
-						System.out.println("- " +listaProdutos + ": " + contL + "un");
+						System.out.println("* Liner: " + contL + "un *");
 					} else if(listaProdutos=="cadeira de rodas") {
-						System.out.println("- " +listaProdutos + ": " + contC + "un");
+						System.out.println("* Cadeira de rodas: " + contC + "un *");
 					}
 					
 				}
 				break;
+//Caso digite 0, sai do menu do estoque.
 			default:
 				System.out.println("\nVocê finalizou o programa, volte sempre! :D");
 			}
-		} while (op != 0);
-		
-		if(opPessoa == 1 && doacao == 1) {
+		} while (opcaoEstoque != 0);
+
+//Verifica se é fisica ou juridica e também se vai doar ou receber e imprime a informação correta. 
+		if(opcaoPessoa == 1 && doacao == 1) {
 			cpf.imprimirInfoDoacao();
-		} else if(opPessoa == 1 && doacao == 2){
+		} else if(opcaoPessoa == 1 && doacao == 2){
 			cpf.imprimirInfoEmp();
-		} else if(opPessoa== 2 && doacao == 1){
+		} else if(opcaoPessoa== 2 && doacao == 1){
 			cnpj.imprimirInfoDoacao();
 		} else {
 			cnpj.imprimirInfoEmp();
