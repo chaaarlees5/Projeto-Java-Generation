@@ -83,4 +83,25 @@ public class Cadastro {
     	int numero = sorteia.nextInt((max-min) + 1) + min;
     	return numero;
 	}
+	
+	public void imprimirInfo(int opPessoa, int doacao, String cpf, String cnpj) {
+		if(opPessoa == 1 && doacao == 1) {
+			System.out.println("\t\t\n ::: Carteirinha de Doador :::");
+	        System.out.println("\nID Doador: " + getRandom());
+	        System.out.println("\nNome: "+getNome()+"\tTelefone: "+getTelefone());
+		} else if(opPessoa == 1 && doacao == 2){
+			System.out.println("\t\t\n ::: Contrato de Empréstimo de Equipamentos :::");
+	        System.out.println("\nNúmero do Contrato: " + getRandom());
+	        System.out.println("\nNome: "+getNome()+"\nCPF: "+cpf+"\nEndereço: "+getEndereco()
+	        +"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
+		} else if(opPessoa == 2 && doacao == 1){
+			System.out.println("\t\t\n ::: AGRADECIMENTOS :::");
+	        System.out.println("\nMuito obrigado " + getNome() + "!!!\nAgradecemos a sua doação!!");
+		} else {
+			System.out.println("\t\t\n ::: Contrato de Empréstimo de Equipamentos :::");
+	        System.out.println("\nNúmero do Contrato: " + getRandom());
+	        System.out.println("\nNome: "+getNome()+"\nCNPJ: "+cnpj+"\nEndereço: "+getEndereco()
+	        +"\nTelefone: "+getTelefone()+"\nEmail: "+getEmail());
+		}
+	}
 }

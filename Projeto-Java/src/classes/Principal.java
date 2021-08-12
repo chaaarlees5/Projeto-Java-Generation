@@ -98,17 +98,16 @@ public class Principal {
 				System.out.println("\t\t\n::: Equipamentos disponíveis para empréstimo :::\n");
 				for(String listaProdutos:produtos) {
 					if(listaProdutos=="muleta") {
-						System.out.println("- " + listaProdutos + ": " + contM + "un");
+						System.out.println("* Muleta: " + contM + "un *");
 					} else if(listaProdutos=="andador") {
-						System.out.println("- " +listaProdutos + ": " + contA + "un");
+						System.out.println("* Andador: " + contA + "un *");
 					} else if(listaProdutos=="protese") {
-						System.out.println("- " +listaProdutos + ": " + contP + "un");
+						System.out.println("* Prótese de perna: " + contP + "un *");
 					} else if(listaProdutos=="liner") {
-						System.out.println("- " +listaProdutos + ": " + contL + "un");
+						System.out.println("* Liner: " + contL + "un *");
 					} else if(listaProdutos=="cadeira de rodas") {
-						System.out.println("- " +listaProdutos + ": " + contC + "un");
+						System.out.println("* Cadeira de rodas: " + contC + "un *");
 					}
-					
 				}
 				break;
 			default:
@@ -116,15 +115,6 @@ public class Principal {
 			}
 		} while (op != 0);
 		
-		if(opPessoa == 1 && doacao == 1) {
-			cpf.imprimirInfoDoacao();
-		} else if(opPessoa == 1 && doacao == 2){
-			cpf.imprimirInfoEmp();
-		} else if(opPessoa== 2 && doacao == 1){
-			cnpj.imprimirInfoDoacao();
-		} else {
-			cnpj.imprimirInfoEmp();
-		}
+		cadastro.imprimirInfo(opPessoa, doacao, cpf.getCpf(), cnpj.getCnpj());
 	}
-
 }
