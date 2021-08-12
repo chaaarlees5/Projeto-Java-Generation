@@ -5,6 +5,8 @@ import java.util.Random;
 public class PessoaFisica extends Cadastro {
 		private String cpf;
 		
+		int doaEmpresta;
+		
 		Random sorteia = new Random();
 
 	   	public PessoaFisica(String nome, String endereco, 
@@ -13,15 +15,8 @@ public class PessoaFisica extends Cadastro {
 	       super(nome, endereco, telefone, email, receita);
 	       this.cpf = cpf;
 	    }
-	   
+	   	
 	   	public void setInformacoes() {
-	   		System.out.println("\t\t*** ONG AmparAção ***"
-	   				+ "\n*** EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS ***");
-	   			
-	   		System.out.print("(1) Doação \n(2) Empréstimo \nDigite a opção desejada: ");
-			int doaEmpresta = input.nextInt();
-			input.nextLine();
-	
 			if(doaEmpresta == 2) {
 				System.out.println("\n\t\t ::: Dados do Paciente ::: ");
 			} else {

@@ -11,6 +11,8 @@ public class Cadastro {
 	private String receita;
 	
 	int opcao;
+	int doaEmpresta;
+	
 	Scanner input = new Scanner(System.in);
 	
 	public Cadastro(String nome, String endereco, 
@@ -65,16 +67,13 @@ public class Cadastro {
 		this.receita = receita;
 	}
 	
-	public String menuEstoque() {
-		return "\n\t\t::: Menu do estoque :::"
-			+ "\n---------------------------------------"
-			+ "\n(1) Adicionar produtos ao estoque"
-				+ "\n(2) Remover produtos do estoque"
-				+ "\n(3) Mostrar todos os produtos do estoque"
-				+ "\n(0) Encerrar"
-			+"\n---------------------------------------"
-			+"\nDigite a opção desejada: ";
-	}
+	public void doaEmpresta() {
+   		System.out.println("\t\t** ONG AmparAção **"
+   				+ "\n** EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS **");
+   		System.out.print("(1) Doação \n(2) Empréstimo \nDigite a opção desejada: ");
+		doaEmpresta = input.nextInt();
+		input.nextLine();
+   	}
 	
 	public int fisicaJuridica() {
 		System.out.print("\n(1) Pessoa Física \n(2) Pessoa Jurídica. \nDigite uma das opções acima: ");
