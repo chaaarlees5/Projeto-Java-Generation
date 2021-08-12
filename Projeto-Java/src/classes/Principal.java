@@ -2,19 +2,17 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class Produtos {
+public class Principal {
 	
 	public static void main(String[] args) {
-		int contC=10, contM=10, contA=10, contP=10, contL=10, op, opcao=0, quant=0;
+		int contC=10, contM=10, contA=10, contP=10, contL=10, op, opPessoa=0, quant=0;
 		String verifica;
 		
 		PessoaFisica cpf = new PessoaFisica (null, null, null, null, null, null);
 		PessoaJuridica cnpj = new PessoaJuridica (null, null, null, null, null);
 		Cadastro cadastro = new Cadastro(null, null, null, null, null);
-		Estoque estoque = new Estoque(0, null, false, 0);
-		
+		Estoque estoque = new Estoque();
 		List <String> produtos = new ArrayList <String>();
 		
 		produtos.add("cadeira de rodas");
@@ -26,9 +24,9 @@ public class Produtos {
 		int doacao = cadastro.doaEmpresta();
 		
 		do {
-			opcao = cadastro.fisicaJuridica();
+			opPessoa = cadastro.fisicaJuridica();
 			
-			switch(opcao) {
+			switch(opPessoa) {
 			case 1:
 				cpf.setInformacoes(doacao);
 				break;
@@ -38,7 +36,7 @@ public class Produtos {
 			default:
 				System.out.println(" * Opção Inválida *\n");
 			}
-		} while (opcao < 1 || opcao > 2);
+		} while (opPessoa < 1 || opPessoa > 2);
 	
 		do {
 			op = estoque.menuEstoque();
@@ -67,7 +65,6 @@ public class Produtos {
 				else {
 					System.out.println("\nProduto não reconhecido.");
 				}
-				
 				System.out.println("\t"+contC+"\t"+contM+"\t"+contA+"\t"+contP+"\t"+contL);
 				break;
 				
@@ -117,14 +114,13 @@ public class Produtos {
 			default:
 				System.out.println("\nVocê finalizou o programa, volte sempre! :D");
 			}
-	
 		} while (op != 0);
 		
-		if(opcao == 1 && doacao == 1) {
+		if(opPessoa == 1 && doacao == 1) {
 			cpf.imprimirInfoDoacao();
-		} else if(opcao == 1 && doacao == 2){
+		} else if(opPessoa == 1 && doacao == 2){
 			cpf.imprimirInfoEmp();
-		} else if(opcao == 2 && doacao == 1){
+		} else if(opPessoa== 2 && doacao == 1){
 			cnpj.imprimirInfoDoacao();
 		} else {
 			cnpj.imprimirInfoEmp();

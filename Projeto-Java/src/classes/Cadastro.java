@@ -10,23 +10,18 @@ public class Cadastro {
 	private String telefone;
 	private String email;
 	private String receita;
-	
 	int opcao;
-	public int doaEmpresta;
+	int doaEmpresta;
 	
 	Scanner input = new Scanner(System.in);
 	Random sorteia = new Random();
 
 	public Cadastro(String nome, String endereco, 
 			String telefone, String email, String receita) {	
-		
-		super();
-		
 	}
 	
 	public Cadastro(String nome, String endereco, 
 			String telefone, String email) {
-		
 			}
 
 	public String getNome() {
@@ -70,8 +65,8 @@ public class Cadastro {
 	}
 	
 	public int doaEmpresta() {
-   		System.out.println("\t\t::: ONG AmparAção :::\n"
-   				+ "\n::: EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS :::\n");
+   		System.out.println("\t\t\t::: ONG AmparAção :::\n"
+   				+ "::: EMPRÉSTIMO DE EQUIPAMENTOS PARA PESSOAS COM DIFICULDADE DE LOCOMOÇÃO :::\n");
    		System.out.print("(1) Doação \n(2) Empréstimo \nDigite a opção desejada: ");
 		return input.nextInt();
    	}
@@ -87,6 +82,5 @@ public class Cadastro {
     	int max = 999999999;
     	int numero = sorteia.nextInt((max-min) + 1) + min;
     	return numero;
-    }
-	
+	}
 }
