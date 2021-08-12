@@ -21,7 +21,7 @@ public class Produtos {
 		produtos.add("protese");
 		produtos.add("liner");
 	
-		int contc=10, contm=10, conta=10, contp=10, contl=10, op, opcao=0, quant=0;
+		int contC=10, contM=10, contA=10, contP=10, contL=10, op, opcao=0, quant=0;
 		String verifica;
 		Scanner input = new Scanner (System.in);
 		
@@ -51,26 +51,26 @@ public class Produtos {
 				
 				if (produtos.contains(verifica)) {
 					if (verifica.equals("cadeira de rodas")) {
-						contc += quant;
+						contC += quant;
 					}
 					else if (verifica.equals("muleta")) {
-						contm += quant;
+						contM += quant;
 					}
 					else if (verifica.equals("andador")) {
-						conta += quant;
+						contA += quant;
 					}
 					else if (verifica.equals("protese")) {
-						contp += quant;
+						contP += quant;
 					}
 					else if (verifica.equals("liner")) {
-						contl += quant;
+						contL += quant;
 					}
 				} 
 				else {
 					System.out.println("\nProduto não reconhecido.");
 				}
 				
-				System.out.println("\t"+contc+"\t"+contm+"\t"+conta+"\t"+contp+"\t"+contl);
+				System.out.println("\t"+contC+"\t"+contM+"\t"+contA+"\t"+contP+"\t"+contL);
 				break;
 				
 			case 2:
@@ -79,19 +79,19 @@ public class Produtos {
 				
 				if (produtos.contains(verifica)) {
 					if (verifica.equals("cadeira de rodas")) {
-						contc -= quant;
+						contC -= quant;
 					}
 					else if (verifica.equals("muleta")) {
-						contm -= quant;
+						contM -= quant;
 					}
 					else if (verifica.equals("andador")) {
-						conta -= quant;
+						contA -= quant;
 					}
 					else if (verifica.equals("protese")) {
-						contp -= quant;
+						contP -= quant;
 					}
 					else if (verifica.equals("liner")) {
-						contl -= quant;
+						contL -= quant;
 					}
 					else {
 						System.out.println("Produto digitado não existe!!!");
@@ -102,10 +102,14 @@ public class Produtos {
 			case 3:
 				System.out.println("\t\t\n::: Equipamentos disponíveis para empréstimo :::\n");
 				for(String listaProdutos:produtos) {
-					if(listaProdutos == "muleta") {
-						System.out.println(listaProdutos + " - " + contm);
-					} else if(listaProdutos == "liner") {
-						System.out.println(listaProdutos + " - " + contl);
+					if(listaProdutos=="muleta") {
+						System.out.println("- " + listaProdutos + ": " + contM + "un");
+					} else if(listaProdutos=="andador") {
+						System.out.println("- " +listaProdutos + ": " + contA + "un");
+					} else if(listaProdutos=="protese") {
+						System.out.println("- " +listaProdutos + ": " + contP + "un");
+					} else if(listaProdutos=="liner") {
+						System.out.println("- " +listaProdutos + ": " + contL + "un");
 					}
 					
 				}

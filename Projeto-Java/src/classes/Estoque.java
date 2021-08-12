@@ -82,7 +82,7 @@ public class Estoque {
 	}
 	
 	public int quantidade() {
-		System.out.print("\nDigite a quantidade a ser adicionada: ");
+		System.out.print("\nDigite a quantidade: ");
 		int quant = input.nextInt();
 		return quant;
 	}

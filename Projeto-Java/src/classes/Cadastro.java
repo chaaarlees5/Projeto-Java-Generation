@@ -68,15 +68,15 @@ public class Cadastro {
 	}
 	
 	public void doaEmpresta() {
-   		System.out.println("\t\t** ONG AmparAção **"
-   				+ "\n** EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS **");
+   		System.out.println("\t\t::: ONG AmparAção :::\n"
+   				+ "\n::: EMPRÉSTIMO DE EQUIPAMENTOS PARA DEFICIENTES E ACIDENTADOS :::\n");
    		System.out.print("(1) Doação \n(2) Empréstimo \nDigite a opção desejada: ");
 		doaEmpresta = input.nextInt();
 		input.nextLine();
    	}
 	
 	public int fisicaJuridica() {
-		System.out.print("\n(1) Pessoa Física \n(2) Pessoa Jurídica. \nDigite uma das opções acima: ");
+		System.out.print("\n(1) Pessoa Física \n(2) Pessoa Jurídica \nDigite uma das opções acima: ");
 		opcao = input.nextInt();
 		return opcao;
 	}
