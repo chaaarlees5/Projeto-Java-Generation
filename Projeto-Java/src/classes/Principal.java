@@ -65,7 +65,6 @@ public class Principal {
 				else {
 					System.out.println("\nProduto não reconhecido.");
 				}
-				System.out.println("\t"+contC+"\t"+contM+"\t"+contA+"\t"+contP+"\t"+contL);
 				break;
 				
 			case 2:
@@ -102,12 +101,13 @@ public class Principal {
 					} else if(listaProdutos=="andador") {
 						System.out.println("* Andador: " + contA + "un *");
 					} else if(listaProdutos=="protese") {
-						System.out.println("* Prótese de perna: " + contP + "un *");
+						System.out.println("* Protese de perna: " + contP + "un *");
 					} else if(listaProdutos=="liner") {
 						System.out.println("* Liner: " + contL + "un *");
 					} else if(listaProdutos=="cadeira de rodas") {
 						System.out.println("* Cadeira de rodas: " + contC + "un *");
 					}
+					
 				}
 				break;
 			default:
@@ -115,6 +115,15 @@ public class Principal {
 			}
 		} while (op != 0);
 		
-		cadastro.imprimirInfo(opPessoa, doacao, cpf.getCpf(), cnpj.getCnpj());
+		if(opPessoa == 1 && doacao == 1) {
+			cpf.imprimirInfoDoacao();
+		} else if(opPessoa == 1 && doacao == 2){
+			cpf.imprimirInfoEmp();
+		} else if(opPessoa== 2 && doacao == 1){
+			cnpj.imprimirInfoDoacao();
+		} else {
+			cnpj.imprimirInfoEmp();
+		}
 	}
+
 }

@@ -65,6 +65,8 @@ public class PessoaFisica extends Cadastro {
 	    }
 	    
 	    public void imprimirInfoDoacao() {
-	        
+	        System.out.println("\t\t\n ::: Carteirinha de Doador :::");
+	        System.out.println("\nID Doador: " + getRandom());
+	        System.out.println("\nNome: "+getNome()+"\tTelefone: "+getTelefone());
 	    }
 	}
